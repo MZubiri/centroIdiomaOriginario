@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
   openEnrollment = output<void>();
-  openSearch = output<void>();
 
   isMobileMenuOpen = signal(false);
 
@@ -27,11 +26,5 @@ export class HeaderComponent {
     if (event) event.preventDefault();
     this.closeMenu();
     this.openEnrollment.emit();
-  }
-
-  onSearchClick(event?: Event) {
-    if (event) event.preventDefault();
-    this.closeMenu();
-    this.openSearch.emit();
   }
 }

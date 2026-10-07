@@ -1,8 +1,7 @@
 <div class="edlo-app-shell">
   <!-- 1. Cabecera Oficial con Navegación Multi-Página -->
   <app-header 
-    (openEnrollment)="openEnrollment()" 
-    (openSearch)="openSearch()">
+    (openEnrollment)="openEnrollment()">
   </app-header>
 
   <!-- 2. Router Outlet para cargar las Páginas Dedicadas (/inicio, /edlo, /cursos, /lenguas, etc.) -->
@@ -125,66 +124,7 @@
     </div>
   }
 
-  <!-- ========================================================
-       MODAL GLOBAL: BÚSQUEDA RÁPIDA Y NAVEGACIÓN
-       ======================================================== -->
-  @if (isSearchModalOpen()) {
-    <div class="modal-overlay" (click)="closeSearch()">
-      <div class="modal-card search-modal-card" (click)="$event.stopPropagation()">
-        <button type="button" class="modal-close-btn" (click)="closeSearch()" aria-label="Cerrar búsqueda">
-          &times;
-        </button>
 
-        <div class="search-modal-header">
-          <h3>Búsqueda Rápida e Información</h3>
-          <p>Encuentra de inmediato cursos, especialización EDLO o contacto.</p>
-        </div>
-
-        <div class="search-input-box">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <input 
-            type="text" 
-            [(ngModel)]="searchQuery" 
-            placeholder="Escribe 'EDLO', 'Quechua', 'Cursos', 'Aymara'..." 
-            autofocus>
-        </div>
-
-        <div class="search-results-list">
-          <a routerLink="/edlo" (click)="closeSearch()" class="search-quick-item">
-            <div class="item-icon">⭐</div>
-            <div>
-              <strong>Especialización EDLO · MINEDU (Página Completa)</strong>
-              <p>Etapas oral y escrita, competencias, simulador y requisitos para el RND-Bilingües.</p>
-            </div>
-          </a>
-
-          <a routerLink="/cursos" (click)="closeSearch()" class="search-quick-item">
-            <div class="item-icon">🏔️</div>
-            <div>
-              <strong>Cursos de Quechua (Básico, Intermedio, Avanzado, Quechua Médico)</strong>
-              <p>Módulos de 220 horas académicas con docentes nativos certificados y test de nivel.</p>
-            </div>
-          </a>
-
-          <a routerLink="/lenguas" (click)="closeSearch()" class="search-quick-item">
-            <div class="item-icon">🗣️</div>
-            <div>
-              <strong>Explorador de Lenguas Originarias</strong>
-              <p>Quechua Sureño, Aymara, Asháninka, Shipibo-Konibo y Awajún.</p>
-            </div>
-          </a>
-
-          <a routerLink="/contacto" (click)="closeSearch()" class="search-quick-item">
-            <div class="item-icon">💬</div>
-            <div>
-              <strong>Contacto Directo y Matrícula por WhatsApp</strong>
-              <p>Asesoría personalizada con nuestro coordinador académico al {{ displayPhone }}.</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  }
 
   <!-- Botón Flotante Directo de WhatsApp -->
   <a 

@@ -6,7 +6,6 @@ import { CompetenciasComponent } from '../../components/competencias/competencia
 import { MetodologiaComponent } from '../../components/metodologia/metodologia.component';
 import { SimuladorComponent } from '../../components/simulador/simulador.component';
 import { PublicoObjetivoComponent } from '../../components/publico-objetivo/publico-objetivo.component';
-import { TestimoniosComponent } from '../../components/testimonios/testimonios.component';
 import { FaqComponent } from '../../components/faq/faq.component';
 
 @Component({
@@ -20,7 +19,6 @@ import { FaqComponent } from '../../components/faq/faq.component';
     MetodologiaComponent,
     SimuladorComponent,
     PublicoObjetivoComponent,
-    TestimoniosComponent,
     FaqComponent
   ],
   templateUrl: './edlo.component.html',

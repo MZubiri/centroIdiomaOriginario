@@ -122,23 +122,6 @@
   gap: 1rem;
 }
 
-.search-btn {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-secondary);
-  background-color: #f1f5f9;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background-color: #e2e8f0;
-    color: var(--color-navy-900);
-    transform: scale(1.05);
-  }
-}
 
 .enroll-btn {
   font-size: 0.9rem;

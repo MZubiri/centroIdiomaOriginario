@@ -28,7 +28,6 @@ export class App {
 
   // Modales Globales
   isEnrollmentModalOpen = signal(false);
-  isSearchModalOpen = signal(false);
   enrollmentSuccess = signal(false);
 
   // Formulario Rápido de Inscripción
@@ -40,9 +39,6 @@ export class App {
     level: 'Preparación EDLO - MINEDU',
     modality: 'Mixta (Sincrónica / Asincrónica)'
   };
-
-  // Búsqueda rápida general
-  searchQuery = signal('');
 
   openEnrollment(language?: string, level?: string) {
     if (language) this.enrollForm.language = language;
@@ -78,14 +74,5 @@ export class App {
         this.closeEnrollment();
       }
     }, 3500);
-  }
-
-  openSearch() {
-    this.isSearchModalOpen.set(true);
-  }
-
-  closeSearch() {
-    this.isSearchModalOpen.set(false);
-    this.searchQuery.set('');
   }
 }
