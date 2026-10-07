@@ -1,0 +1,110 @@
+.impact-quote-section {
+  background: linear-gradient(135deg, #052616 0%, #083c22 100%);
+  color: #ffffff;
+  padding: 4.5rem 0;
+  border-top: 1px solid rgba(34, 197, 94, 0.15);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.15);
+}
+
+.impact-container {
+  display: grid;
+  grid-template-columns: 1.3fr auto 1fr;
+  align-items: center;
+  gap: 3.5rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+}
+
+/* 4 Métricas */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 680px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+  }
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.metric-icon {
+  color: #94a3b8;
+  margin-bottom: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-number {
+  font-family: var(--font-display);
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.metric-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  letter-spacing: 0.02em;
+}
+
+/* Divisor Vertical */
+.impact-divider {
+  width: 1px;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.15);
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+/* Frase Cultural */
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: 1024px) {
+    align-items: center;
+  }
+}
+
+.cultural-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #f1f5f9;
+  margin-bottom: 0.85rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.35rem;
+  }
+}
+
+.quote-brush-stroke {
+  width: 110px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-cyan-400), transparent);
+  border-radius: 2px;
+
+  @media (max-width: 1024px) {
+    margin: 0 auto;
+  }
+}

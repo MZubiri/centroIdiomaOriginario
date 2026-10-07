@@ -1,0 +1,298 @@
+/* ==========================================================================
+   ESTILOS INSPIRADOS EN SAPHI QUECHUA (Vibrante, Cultural, Moderno, Sólido)
+   Centro de Idioma Originario - Sin Glassmorfismo
+   ========================================================================== */
+
+:root {
+  /* Paleta Saphi Signature */
+  --saphi-purple: #612F6D;
+  --saphi-purple-dark: #471E52;
+  --saphi-purple-light: #FBF5FD;
+  --saphi-purple-border: #E8D5EE;
+
+  --saphi-red: #F4333E;
+  --saphi-red-dark: #D41D27;
+  --saphi-red-light: #FFF1F2;
+  --saphi-coral: #FF5959;
+
+  --saphi-lime: #CBDD19;
+  --saphi-lime-dark: #A4B310;
+  --saphi-lime-light: #FEFCE8;
+
+  --saphi-teal: #00938F;
+  --saphi-teal-dark: #007370;
+  --saphi-teal-light: #E8F6F7;
+  --saphi-mint: #65EFB0;
+
+  --saphi-blue: #3342F4;
+  --saphi-blue-dark: #1E2DBE;
+  --saphi-blue-light: #EEF2FF;
+
+  --saphi-yellow: #FFB800;
+
+  /* Superficies y Fondos Sólidos (NO Glassmorphism) */
+  --surface-body: #FFFFFF;
+  --surface-alt: #F8FAFC;
+  --surface-card: #FFFFFF;
+  --surface-muted: #F1F5F9;
+  --surface-dark: #1E162B;
+
+  /* Textos y Contrastes */
+  --text-heading: #212327;
+  --text-purple: #612F6D;
+  --text-body: #475569;
+  --text-muted: #64748B;
+  --text-white: #FFFFFF;
+
+  /* Bordes & Sombras */
+  --border-subtle: #E2E8F0;
+  --border-medium: #CBD5E1;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 2px 8px rgba(97, 47, 109, 0.06);
+  --shadow-md: 0 8px 24px rgba(97, 47, 109, 0.08);
+  --shadow-lg: 0 16px 36px rgba(97, 47, 109, 0.12);
+
+  /* Tipografía */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Quicksand', var(--font-sans);
+
+  --max-width: 1200px;
+}
+
+/* Reset Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-body);
+  background-color: var(--surface-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-heading);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-heading);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-alt {
+  background-color: #F8FAFC;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.85rem;
+  background-color: var(--saphi-purple-light);
+  color: var(--saphi-purple);
+  border: 1px solid var(--saphi-purple-border);
+
+  &.red {
+    background-color: var(--saphi-red-light);
+    color: var(--saphi-red);
+    border-color: #FECDD3;
+  }
+
+  &.teal {
+    background-color: var(--saphi-teal-light);
+    color: var(--saphi-teal);
+    border-color: #CCFBF1;
+  }
+
+  &.lime {
+    background-color: var(--saphi-lime-light);
+    color: #5A6605;
+    border-color: #E6F08A;
+  }
+}
+
+.section-title {
+  font-size: 2.35rem;
+  color: var(--saphi-purple);
+  margin-bottom: 0.75rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.85rem;
+  }
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+/* Botones Saphi Style (Redondeados, Vistosos, Sólidos) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-full);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+/* Botón Amarillo/Lima Saphi */
+.btn-lime {
+  background-color: var(--saphi-lime);
+  color: var(--saphi-purple);
+  border: 2px solid var(--saphi-lime-dark);
+  box-shadow: 0 4px 14px rgba(203, 221, 25, 0.4);
+
+  &:hover {
+    background-color: #d7e828;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(203, 221, 25, 0.5);
+  }
+}
+
+/* Botón Rojo/Coral Saphi */
+.btn-red {
+  background-color: var(--saphi-red);
+  color: #FFFFFF;
+  border: 2px solid var(--saphi-red-dark);
+  box-shadow: 0 4px 14px rgba(244, 51, 62, 0.35);
+
+  &:hover {
+    background-color: var(--saphi-red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 51, 62, 0.45);
+  }
+}
+
+/* Botón Morado Saphi */
+.btn-purple {
+  background-color: var(--saphi-purple);
+  color: #FFFFFF;
+  border: 2px solid var(--saphi-purple-dark);
+  box-shadow: 0 4px 14px rgba(97, 47, 109, 0.3);
+
+  &:hover {
+    background-color: var(--saphi-purple-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(97, 47, 109, 0.4);
+  }
+}
+
+/* Botón Teal Saphi */
+.btn-teal {
+  background-color: var(--saphi-teal);
+  color: #FFFFFF;
+  border: 2px solid var(--saphi-teal-dark);
+
+  &:hover {
+    background-color: var(--saphi-teal-dark);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: var(--saphi-purple);
+  border: 2px solid var(--saphi-purple);
+
+  &:hover {
+    background-color: var(--saphi-purple-light);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+  border: 2px solid #1EBE5B;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+
+  &:hover {
+    background-color: #1EBE5B;
+    transform: translateY(-2px);
+  }
+}
+
+.btn-lg {
+  padding: 1rem 2.25rem;
+  font-size: 1.1rem;
+}
+
+.btn-sm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+}
+
+/* Tarjetas Sólidas (Sin Glassmorfismo) */
+.card {
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: var(--saphi-purple-border);
+    box-shadow: var(--shadow-md);
+  }
+}

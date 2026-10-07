@@ -1,0 +1,49 @@
+<div class="noticias-page">
+  <header class="noticias-hero">
+    <div class="container">
+      <div class="hero-tag-pill">
+        <span class="pill-dot"></span>
+        <span>ACTUALIDAD, COMUNIDAD & RECURSOS</span>
+      </div>
+      <h1 class="noticias-hero-title">
+        Noticias, Difusión y <span class="highlight-cyan">Recursos Pedagógicos</span>
+      </h1>
+      <p class="noticias-hero-lead">
+        Mantente al día con las convocatorias del MINEDU, reconocimientos culturales, literatura originaria y recursos lingüísticos digitales.
+      </p>
+    </div>
+  </header>
+
+  <!-- Componente de Noticias -->
+  <section class="section">
+    <app-noticias></app-noticias>
+  </section>
+
+  <!-- Recursos Educativos y Digitales -->
+  <section class="section resources-section">
+    <div class="container">
+      <div class="section-heading-box">
+        <span class="heading-tag">BIBLIOTECA & HERRAMIENTAS</span>
+        <h2 class="heading-title">Recursos para el Aprendizaje y la Docencia</h2>
+        <p class="heading-desc">Herramientas gratuitas recomendadas para fortalecer tu práctica pedagógica y lingüística.</p>
+      </div>
+
+      <div class="resources-grid">
+        @for (res of resources; track res.title) {
+          <div class="resource-card">
+            <div class="res-icon">{{ res.icon }}</div>
+            <div class="res-body">
+              <span class="res-badge">{{ res.badge }}</span>
+              <h3 class="res-title">{{ res.title }}</h3>
+              <p class="res-desc">{{ res.desc }}</p>
+              <a [href]="res.link" target="_blank" rel="noopener" class="res-link">
+                <span>Acceder al recurso</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

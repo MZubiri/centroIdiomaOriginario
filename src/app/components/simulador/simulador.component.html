@@ -1,0 +1,148 @@
+<section id="simulador" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge terracotta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        Entrenamiento Interactivo
+      </span>
+      <h2 class="section-title">SIMULADOR DE SITUACIONES EDLO</h2>
+      <p class="section-description">
+        Experimenta cómo se estructuran los reactivos en las entrevistas orales y pruebas escritas según los estándares del MINEDU.
+      </p>
+    </div>
+
+    <div class="simulador-container">
+      @if (!isCompleted()) {
+        <!-- Tarjeta de Pregunta Activa -->
+        <div class="quiz-card card">
+          <div class="quiz-header-bar">
+            <div class="quiz-meta-left">
+              <span class="badge" [ngClass]="currentQuestion.modality === 'oral' ? 'badge-blue' : 'badge-terracotta'">
+                Fase {{ currentQuestion.modality === 'oral' ? 'Oral (Entrevista)' : 'Escrita (Normativa)' }}
+              </span>
+              <span class="badge badge-gold">{{ currentQuestion.language }}</span>
+              <span class="badge-target">Objetivo: Nivel {{ currentQuestion.levelTarget }}</span>
+            </div>
+            <div class="quiz-progress-text">
+              Pregunta {{ currentIndex() + 1 }} de {{ preguntas.length }}
+            </div>
+          </div>
+
+          <!-- Barra de Progreso -->
+          <div class="progress-track">
+            <div class="progress-fill" [style.width.%]="((currentIndex() + 1) / preguntas.length) * 100"></div>
+          </div>
+
+          <h3 class="question-title">{{ currentQuestion.title }}</h3>
+
+          <div class="situation-box">
+            <div class="situation-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span>Contexto de la Situación Evaluativa:</span>
+            </div>
+            <p class="situation-text">{{ currentQuestion.situationContext }}</p>
+          </div>
+
+          <p class="prompt-text"><strong>Pregunta:</strong> {{ currentQuestion.prompt }}</p>
+
+          <!-- Opciones de Respuesta -->
+          <div class="options-group">
+            @for (opt of currentQuestion.options; track opt.id) {
+              <button 
+                type="button" 
+                class="option-btn" 
+                [class.selected]="selectedOptionId() === opt.id"
+                [class.correct]="hasAnswered() && opt.isCorrect"
+                [class.incorrect]="hasAnswered() && selectedOptionId() === opt.id && !opt.isCorrect"
+                (click)="selectOption(opt.id)"
+                [disabled]="hasAnswered()">
+                <span class="option-letter">{{ opt.id }}</span>
+                <span class="option-text">{{ opt.text }}</span>
+              </button>
+            }
+          </div>
+
+          <!-- Retroalimentación Pedagógica -->
+          @if (hasAnswered()) {
+            <div class="feedback-panel">
+              <div class="feedback-header">
+                @if (currentQuestion.options.find(o => o.id === selectedOptionId())?.isCorrect) {
+                  <div class="feedback-badge success">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>¡Respuesta Correcta!</span>
+                  </div>
+                } @else {
+                  <div class="feedback-badge error">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <span>Revisión Necesaria</span>
+                  </div>
+                }
+              </div>
+
+              <!-- Explicación de la Opción -->
+              @for (opt of currentQuestion.options; track opt.id) {
+                @if (selectedOptionId() === opt.id) {
+                  <p class="feedback-explanation"><strong>Análisis:</strong> {{ opt.feedback }}</p>
+                }
+              }
+
+              <div class="tip-box">
+                <strong>Consejo del Formador:</strong> {{ currentQuestion.pedagogicalTip }}
+              </div>
+            </div>
+          }
+
+          <!-- Botones de Acción -->
+          <div class="quiz-footer-actions">
+            @if (!hasAnswered()) {
+              <button 
+                type="button" 
+                class="btn btn-primary" 
+                [disabled]="!selectedOptionId()" 
+                (click)="submitAnswer()">
+                Confirmar Respuesta
+              </button>
+            } @else {
+              <button 
+                type="button" 
+                class="btn btn-primary" 
+                (click)="nextQuestion()">
+                {{ currentIndex() < preguntas.length - 1 ? 'Siguiente Pregunta' : 'Ver Diagnóstico Final' }}
+              </button>
+            }
+          </div>
+        </div>
+      } @else {
+        <!-- Pantalla de Resultados Finales (Sólida, No Glass) -->
+        <div class="results-card card">
+          <div class="results-badge">Diagnóstico Preliminar Completado</div>
+          <h3 class="results-title">Tu Resultado en el Mini-Simulador</h3>
+
+          <div class="score-display">
+            <span class="score-num">{{ score() }}</span>
+            <span class="score-total">/ {{ preguntas.length }}</span>
+          </div>
+
+          <p class="results-verdict">
+            @if (score() === preguntas.length) {
+              ¡Excelente dominio preliminar! Cuentas con sólidas bases gramaticales y discursivas para alcanzar el <strong>Nivel Avanzado</strong> en la EDLO.
+            } @else if (score() >= 1) {
+              Tienes buen reconocimiento de estructuras, pero requieres afianzar sufijos y conectores normados para asegurar el <strong>Nivel Intermedio o Avanzado</strong>.
+            } @else {
+              Te recomendamos iniciar desde nuestro módulo fundamental para fortalecer la estructura de la lengua y el alfabeto normado oficial.
+            }
+          </p>
+
+          <div class="results-cta-box">
+            <h4>¿Quieres entrenar con más de 400 reactivos y simulacros 1 a 1?</h4>
+            <p>Inscríbete hoy en la capacitación integral y prepárate con formadores especialistas.</p>
+            <div class="results-actions">
+              <a href="#inscripcion" class="btn btn-primary btn-lg">Inscribirme a la Capacitación Completa</a>
+              <button type="button" class="btn btn-secondary" (click)="restart()">Reintentar Mini-Simulador</button>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

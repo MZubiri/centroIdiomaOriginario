@@ -1,0 +1,281 @@
+<div class="cursos-page">
+  <!-- Cabecera de la Página Cursos -->
+  <header class="cursos-hero">
+    <div class="container">
+      <div class="hero-tag-pill">
+        <span class="pill-dot"></span>
+        <span>PROGRAMAS ACADÉMICOS 2025 - 2026</span>
+      </div>
+      <h1 class="cursos-hero-title">
+        Cursos y Programas <span class="highlight-cyan">Especializados</span>
+      </h1>
+      <p class="cursos-hero-lead">
+        Formación integral en Quechua Sureño, Quechua Médico y lenguas originarias del Perú, con docentes nativos expertos y certificación con valor pedagógico.
+      </p>
+    </div>
+  </header>
+
+  <!-- Test de Nivel Rápido Integrado -->
+  <section class="section test-section">
+    <div class="container">
+      <div class="test-card">
+        <div class="test-header">
+          <div class="test-badge">ORIENTACIÓN PEDAGÓGICA GRATUITA</div>
+          <h2 class="test-title">¿No sabes en qué nivel empezar? Haz nuestro Test Rápido</h2>
+          <p class="test-subtitle">3 breves preguntas para identificar el programa ideal para tu desarrollo o acreditación docente.</p>
+        </div>
+
+        @if (currentTestStep() < 3) {
+          <div class="test-steps-progress">
+            <span class="step-pill" [class.active]="currentTestStep() === 0">1. Comprensión</span>
+            <span class="step-pill" [class.active]="currentTestStep() === 1">2. Expresión Oral</span>
+            <span class="step-pill" [class.active]="currentTestStep() === 2">3. Escritura Oficial</span>
+          </div>
+
+          <div class="question-container">
+            <h3 class="q-title">{{ testQuestions[currentTestStep()].title }}</h3>
+            <p class="q-sub">{{ testQuestions[currentTestStep()].subtitle }}</p>
+
+            <div class="options-grid">
+              @for (option of testQuestions[currentTestStep()].options; track option.label) {
+                <button type="button" class="opt-btn" (click)="selectTestOption(option.points)">
+                  <span class="opt-bullet">○</span>
+                  <div class="opt-content">
+                    <strong class="opt-label">{{ option.label }}</strong>
+                    <span class="opt-desc">{{ option.description }}</span>
+                  </div>
+                </button>
+              }
+            </div>
+          </div>
+        } @else {
+          <div class="test-result-container">
+            <div class="result-badge-tag">{{ recommendedLevel.tag }}</div>
+            <h3 class="result-name">{{ recommendedLevel.name }}</h3>
+            <p class="result-desc">{{ recommendedLevel.desc }}</p>
+
+            <div class="result-advice-box">
+              <span class="advice-bulb">💡</span>
+              <p>{{ recommendedLevel.advice }}</p>
+            </div>
+
+            <div class="result-actions-row">
+              <a [href]="getTestWhatsAppUrl()" target="_blank" rel="noopener" class="btn btn-whatsapp-result">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+                <span>Consultar Matrícula de este Nivel por WhatsApp</span>
+              </a>
+              <button type="button" class="btn btn-outline" (click)="restartTest()">
+                <span>Repetir Test</span>
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Catálogo de Cursos de Quechua Sureño -->
+  <section class="section courses-list-section">
+    <div class="container">
+      <div class="section-heading-box">
+        <span class="heading-tag">QUECHUA SUREÑO (CHANKA Y COLLAO)</span>
+        <h2 class="heading-title">Niveles Formativos Certificados</h2>
+        <p class="heading-desc">Cada módulo incluye 220 horas pedagógicas, material descargable y asesoría personalizada.</p>
+      </div>
+
+      <div class="courses-3grid">
+        <!-- Nivel Básico -->
+        <div class="course-card">
+          <div class="card-badge">220 Horas Académicas</div>
+          <div class="course-image-wrap">
+            <img src="/images/level_basic.jpg" alt="Quechua Básico" class="course-img">
+            <div class="course-level-pill">Nivel Básico</div>
+          </div>
+          <div class="course-body">
+            <h3 class="course-name">Quechua Sureño Básico</h3>
+            <p class="course-summary">
+              Iníciate en la lengua de los incas. Aprende saludos, normas de cortesía, morfología nominal y escritura básica con el alfabeto normado.
+            </p>
+            <ul class="course-topics-list">
+              <li>Fonética andina y ortografía normalizada</li>
+              <li>Sufijos de pertenencia y pronombres</li>
+              <li>Presentación personal y descripción de objetos</li>
+              <li>Diálogos cotidianos en situaciones reales</li>
+            </ul>
+            <div class="course-footer">
+              <a [href]="getCourseWhatsAppUrl('Quechua Sureño Básico (220h)')" target="_blank" rel="noopener" class="btn btn-course-enroll">
+                <span>Inscribirme al Básico</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nivel Intermedio -->
+        <div class="course-card featured-course">
+          <div class="card-badge gold-badge">Más Solicitado</div>
+          <div class="course-image-wrap">
+            <img src="/images/level_intermediate.jpg" alt="Quechua Intermedio" class="course-img">
+            <div class="course-level-pill intermediate-pill">Nivel Intermedio</div>
+          </div>
+          <div class="course-body">
+            <h3 class="course-name">Quechua Sureño Intermedio</h3>
+            <p class="course-summary">
+              Desarrolla soltura y fluidez discursiva. Profundiza en sufijos verbales, tiempos pasados y narración fluida en contextos pedagógicos.
+            </p>
+            <ul class="course-topics-list">
+              <li>Sufijación verbal compleja y derivación</li>
+              <li>Evidenciales directos e indirectos</li>
+              <li>Comprensión y producción de textos pedagógicos</li>
+              <li>Práctica conversacional continua con nativos</li>
+            </ul>
+            <div class="course-footer">
+              <a [href]="getCourseWhatsAppUrl('Quechua Sureño Intermedio (220h)')" target="_blank" rel="noopener" class="btn btn-course-enroll btn-featured">
+                <span>Inscribirme al Intermedio</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nivel Avanzado -->
+        <div class="course-card">
+          <div class="card-badge">220 Horas Académicas</div>
+          <div class="course-image-wrap">
+            <img src="/images/level_advanced.jpg" alt="Quechua Avanzado" class="course-img">
+            <div class="course-level-pill advanced-pill">Nivel Avanzado</div>
+          </div>
+          <div class="course-body">
+            <h3 class="course-name">Quechua Sureño Avanzado</h3>
+            <p class="course-summary">
+              Dominio discursivo integral, redacción académica, análisis de literatura quechua contemporánea y argumentación oral y escrita de alto nivel.
+            </p>
+            <ul class="course-topics-list">
+              <li>Discurso formal, oratoria y metáforas andinas</li>
+              <li>Redacción académica y documentos oficiales</li>
+              <li>Dialectología y comparación Chanka - Collao</li>
+              <li>Simulacro avanzado tipo evaluación RND</li>
+            </ul>
+            <div class="course-footer">
+              <a [href]="getCourseWhatsAppUrl('Quechua Sureño Avanzado (220h)')" target="_blank" rel="noopener" class="btn btn-course-enroll">
+                <span>Inscribirme al Avanzado</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programa Especializado: Quechua Médico -->
+  <section class="section quechua-medico-section">
+    <div class="container">
+      <div class="medico-spotlight-card">
+        <div class="medico-img-col">
+          <img src="/images/quechua_medico.png" alt="Quechua Médico" class="medico-photo">
+          <div class="medico-chip">SALUD PÚBLICA & INTERCULTURALIDAD</div>
+        </div>
+        <div class="medico-text-col">
+          <span class="medico-tag">PROGRAMA DE EXTENSIÓN PROFESIONAL</span>
+          <h2 class="medico-title">Quechua Médico: Comunicación en Salud</h2>
+          <p class="medico-desc">
+            Diseñado exclusivamente para médicos, enfermeros, obstetras y técnicos asistenciales que prestan servicio en establecimientos de salud del ámbito quechuahablante.
+          </p>
+          <div class="medico-points">
+            <div class="point-badge">
+              <span>🩺</span>
+              <div>
+                <strong>Anamnesis e Historia Clínica</strong>
+                <p>Preguntas clave para el interrogatorio médico en lengua originaria.</p>
+              </div>
+            </div>
+            <div class="point-badge">
+              <span>🫀</span>
+              <div>
+                <strong>Anatomía y Sintomatología</strong>
+                <p>Dolencias andinas, órganos y vocabulario clínico estandarizado.</p>
+              </div>
+            </div>
+            <div class="point-badge">
+              <span>🤝</span>
+              <div>
+                <strong>Consentimiento Informado</strong>
+                <p>Explicación de tratamientos, dosificación y procedimientos con empatía.</p>
+              </div>
+            </div>
+          </div>
+          <a [href]="getCourseWhatsAppUrl('Quechua Médico Especializado')" target="_blank" rel="noopener" class="btn btn-whatsapp-medico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+            <span>Solicitar Información de Quechua Médico</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verificador Oficial de Certificados -->
+  <section class="section certificate-verify-section">
+    <div class="container">
+      <div class="verify-card">
+        <div class="verify-header">
+          <span class="verify-icon">📜</span>
+          <h2 class="verify-title">Verificación de Certificados Oficiales</h2>
+          <p class="verify-subtitle">Ingresa el código único asignado al participante para validar su autenticidad y registro institucional.</p>
+        </div>
+
+        <div class="verify-search-bar">
+          <input 
+            type="text" 
+            [(ngModel)]="searchCertCode" 
+            (keyup.enter)="searchCertificate()" 
+            placeholder="Ej. CIO-APU-2026-0814"
+            class="verify-input">
+          <button type="button" class="btn btn-verify-submit" (click)="searchCertificate()">
+            <span>Validar Código</span>
+          </button>
+        </div>
+
+        @if (activeCertificate) {
+          <div class="certificate-display-card">
+            <div class="cert-status-badge">
+              <span class="cert-check">✔</span>
+              <span>CERTIFICADO VÁLIDO Y REGISTRADO</span>
+            </div>
+
+            <div class="cert-grid">
+              <div class="cert-field">
+                <span class="field-label">Código de Registro</span>
+                <strong class="field-val code-val">{{ activeCertificate.code }}</strong>
+              </div>
+              <div class="cert-field">
+                <span class="field-label">Participante Acreditado(a)</span>
+                <strong class="field-val">{{ activeCertificate.recipient }}</strong>
+              </div>
+              <div class="cert-field">
+                <span class="field-label">Módulo / Programa</span>
+                <strong class="field-val">{{ activeCertificate.module }}</strong>
+              </div>
+              <div class="cert-field">
+                <span class="field-label">Horas Académicas</span>
+                <strong class="field-val">{{ activeCertificate.hours }} horas lectivas</strong>
+              </div>
+              <div class="cert-field">
+                <span class="field-label">Calificación Obtenida</span>
+                <strong class="field-val grade-val">{{ activeCertificate.grade }}</strong>
+              </div>
+              <div class="cert-field">
+                <span class="field-label">Periodo de Ejecución</span>
+                <strong class="field-val">{{ activeCertificate.dateRange }}</strong>
+              </div>
+              <div class="cert-field">
+                <span class="field-label">Fecha y Lugar de Emisión</span>
+                <strong class="field-val">{{ activeCertificate.issueDate }} — {{ activeCertificate.location }}</strong>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

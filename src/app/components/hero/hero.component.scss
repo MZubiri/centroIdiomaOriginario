@@ -1,0 +1,255 @@
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-body);
+}
+
+.hero-wrapper {
+  position: relative;
+  background: radial-gradient(circle at 82% 25%, rgba(34, 197, 94, 0.18) 0%, transparent 55%),
+              radial-gradient(circle at 18% 75%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+              linear-gradient(135deg, #052616 0%, #083c22 45%, #0d5431 100%);
+  color: #ffffff;
+  padding-top: 4.5rem;
+  padding-bottom: 7.5rem;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 3.5rem;
+  position: relative;
+  z-index: 2;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 1rem;
+  }
+}
+
+/* Columna de Texto */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-tagline {
+  margin-bottom: 1.25rem;
+
+  .tag-text {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--color-cyan-300);
+    text-transform: uppercase;
+    display: inline-block;
+  }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 3.65rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 2.75rem;
+  }
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+}
+
+/* Botones */
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 3.25rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn-main {
+  padding: 0.85rem 1.85rem;
+  font-size: 1rem;
+}
+
+/* 4 Badges de Valores */
+.hero-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  @media (max-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.value-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+
+    .badge-icon {
+      color: var(--color-cyan-300);
+      transform: scale(1.1);
+    }
+  }
+}
+
+.badge-icon {
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.badge-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  letter-spacing: 0.02em;
+}
+
+/* Columna Visual Derecha */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image-container {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  max-width: 520px;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5, 38, 22, 0.45) 0%, transparent 60%);
+    pointer-events: none;
+  }
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+/* Frase Caligráfica "Nuestras raíces, nuestro futuro" */
+.quote-calligraphic {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 5;
+  text-align: right;
+  pointer-events: none;
+}
+
+.quote-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.25;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  display: block;
+}
+
+.brush-stroke {
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--color-cyan-400));
+  border-radius: 2px;
+  margin-top: 0.4rem;
+  margin-left: auto;
+}
+
+/* Decoración Lateral con Hojas y Palabras Verticales */
+.hero-side-accent {
+  position: absolute;
+  right: -3.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  pointer-events: none;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.leaf-flourish {
+  opacity: 0.7;
+}
+
+.vertical-words {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  text-align: center;
+
+  span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.45);
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
+}
+
+/* Divisor Ondulado */
+.hero-wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 1;
+
+  svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 70px;
+  }
+}

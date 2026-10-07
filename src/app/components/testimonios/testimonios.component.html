@@ -1,0 +1,45 @@
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge terracotta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        Experiencias de Docentes Acreditados
+      </span>
+      <h2 class="section-title">TESTIMONIOS DE ÉXITO</h2>
+      <p class="section-description">
+        Maestros de diferentes regiones del Perú que fortalecieron su dominio y alcanzaron niveles destacados en la Evaluación de Dominio de Lengua Originaria.
+      </p>
+    </div>
+
+    <div class="testimonios-grid">
+      @for (item of testimonios; track item.id) {
+        <div class="testimonio-card card">
+          <div class="card-top-status">
+            <span class="badge badge-emerald">{{ item.statusBadge }}</span>
+            <span class="testimonio-year">{{ item.year }}</span>
+          </div>
+
+          <div class="quote-text">
+            "{{ item.quote }}"
+          </div>
+
+          <div class="achieved-level-box">
+            <span class="level-label">Nivel Obtenido:</span>
+            <span class="level-val">{{ item.levelAchieved }}</span>
+          </div>
+
+          <div class="teacher-profile">
+            <div class="teacher-avatar" [style.backgroundColor]="item.avatarBg">
+              {{ item.avatarInitial }}
+            </div>
+            <div class="teacher-info">
+              <h4 class="teacher-name">{{ item.name }}</h4>
+              <p class="teacher-role">{{ item.specialty }}</p>
+              <p class="teacher-loc">{{ item.ugel }} • {{ item.region }} ({{ item.lengua }})</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

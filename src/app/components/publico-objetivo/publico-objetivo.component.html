@@ -1,0 +1,71 @@
+<section id="dirigido-a" class="section">
+  <div class="container">
+    <!-- Grid Principal de 2 Columnas -->
+    <div class="dirigido-layout">
+      <!-- Columna 1: DIRIGIDO A -->
+      <div class="dirigido-col">
+        <div class="section-badge terracotta">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          Destinatarios del Programa
+        </div>
+        <h2 class="section-title text-left">DIRIGIDO A</h2>
+        <p class="dirigido-intro">
+          <strong>Docentes y profesionales de la educación</strong> que desean fortalecer su dominio de una lengua originaria y prepararse para los procesos de evaluación correspondientes.
+        </p>
+
+        <div class="perfiles-stack">
+          @for (perfil of perfiles; track perfil.title) {
+            <div class="perfil-card">
+              <div class="perfil-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"></path></svg>
+              </div>
+              <div class="perfil-body">
+                <div class="perfil-top">
+                  <h4 class="perfil-title">{{ perfil.title }}</h4>
+                  <span class="badge badge-blue">{{ perfil.badge }}</span>
+                </div>
+                <p class="perfil-desc">{{ perfil.desc }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Columna 2: OBJETIVO GENERAL -->
+      <div class="objetivo-col">
+        <div class="objetivo-card-solid">
+          <div class="objetivo-header">
+            <span class="section-badge emerald">Propósito Central</span>
+            <h3 class="objetivo-main-title">OBJETIVO DEL PROGRAMA</h3>
+            <p class="objetivo-core-statement">
+              "Fortalecer las competencias comunicativas de los docentes en una lengua originaria, contribuyendo a su preparación para afrontar adecuadamente los procesos de evaluación correspondientes."
+            </p>
+          </div>
+
+          <div class="objetivo-divider"></div>
+
+          <h4 class="pilares-title">Impacto y Resultados Esperados:</h4>
+          <div class="pilares-grid">
+            @for (pilar of objetivoPilares; track pilar.title) {
+              <div class="pilar-item">
+                <div class="pilar-indicator"></div>
+                <div>
+                  <h5 class="pilar-heading">{{ pilar.title }}</h5>
+                  <p class="pilar-text">{{ pilar.desc }}</p>
+                </div>
+              </div>
+            }
+          </div>
+
+          <div class="objetivo-cta-banner">
+            <div class="banner-text">
+              <strong>¿Listo para dar el siguiente paso en tu carrera docente?</strong>
+              <span>Garantiza tu preparación con especialistas en lenguas originarias.</span>
+            </div>
+            <a href="#inscripcion" class="btn btn-primary btn-sm">Quiero Inscribirme</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

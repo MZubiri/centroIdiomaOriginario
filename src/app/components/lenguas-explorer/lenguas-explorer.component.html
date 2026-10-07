@@ -1,0 +1,115 @@
+<section id="lenguas" class="section languages-section">
+  <div class="container">
+    <!-- Encabezado de Sección según Image 4 -->
+    <div class="languages-header">
+      <div class="header-left">
+        <h2 class="languages-title">
+          Nuestras <span class="highlight-cyan">lenguas</span>
+        </h2>
+        <div class="title-underline"></div>
+        <p class="languages-subtitle">
+          Conoce y aprende las lenguas que dan vida a nuestra historia.
+        </p>
+      </div>
+
+      <a routerLink="/lenguas" class="see-more-link">
+        <span>Ver todos los idiomas</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Carrusel / Cuadrícula de 5 Tarjetas Visuales -->
+    <div class="languages-grid">
+      @for (lang of languages; track lang.id) {
+        <div 
+          class="lang-card" 
+          (click)="openLanguageModal(lang, $event)"
+          tabindex="0"
+          role="button"
+          [attr.aria-label]="'Ver información de ' + lang.name">
+          <!-- Imagen de Fondo Realista -->
+          <img [src]="lang.image" [alt]="lang.name + ' - ' + lang.tagline" class="lang-bg-img" loading="lazy">
+          
+          <!-- Capa de Gradiente Oscuro para Legibilidad -->
+          <div class="lang-overlay"></div>
+
+          <!-- Contenido de la Tarjeta -->
+          <div class="lang-card-content">
+            <div class="lang-text-group">
+              <h3 class="lang-name">{{ lang.name }}</h3>
+              <span class="lang-tagline">{{ lang.tagline }}</span>
+            </div>
+
+            <!-- Botón Circular con Flecha -->
+            <button 
+              type="button" 
+              class="lang-arrow-btn" 
+              (click)="openLanguageModal(lang, $event)"
+              [attr.aria-label]="'Conocer más sobre ' + lang.name">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Modal Detallado de Lengua Originaria -->
+  @if (selectedModalLang(); as lang) {
+    <div class="modal-overlay" (click)="closeLanguageModal()">
+      <div class="modal-card lang-modal-card" (click)="$event.stopPropagation()">
+        <button type="button" class="modal-close-btn" (click)="closeLanguageModal()" aria-label="Cerrar ventana">
+          &times;
+        </button>
+
+        <div class="lang-modal-hero">
+          <img [src]="lang.image" [alt]="lang.name" class="modal-hero-img">
+          <div class="modal-hero-overlay"></div>
+          <div class="modal-hero-text">
+            <span class="modal-tagline">{{ lang.tagline }}</span>
+            <h3 class="modal-lang-title">{{ lang.name }}</h3>
+          </div>
+        </div>
+
+        <div class="lang-modal-body">
+          <p class="modal-description">{{ lang.description }}</p>
+
+          <div class="modal-meta-grid">
+            <div class="meta-item">
+              <span class="meta-label">Población Hablante:</span>
+              <span class="meta-value">{{ lang.speakers }}</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Familia Lingüística:</span>
+              <span class="meta-value">{{ lang.family }}</span>
+            </div>
+            <div class="meta-item full-width">
+              <span class="meta-label">Regiones Principales:</span>
+              <span class="meta-value">{{ lang.region }}</span>
+            </div>
+            <div class="meta-item full-width highlight-box">
+              <span class="meta-label">Modalidad y Frecuencia:</span>
+              <span class="meta-value">{{ lang.nextStart }}</span>
+            </div>
+          </div>
+
+          <div class="modal-cta-row">
+            <button type="button" class="btn btn-navy" (click)="enrollInLang(lang.name)">
+              <span>Inscribirme en {{ lang.name }}</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+            <button type="button" class="btn btn-outline" (click)="closeLanguageModal()">
+              <span>Volver a explorar</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</section>

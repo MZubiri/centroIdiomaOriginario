@@ -1,0 +1,76 @@
+<section id="noticias" class="section noticias-section">
+  <div class="container">
+    <!-- Encabezado de la Sección Noticias & Recursos -->
+    <div class="noticias-header">
+      <div class="noticias-tag-pill">
+        <span class="pill-dot"></span>
+        <span>BLOG, MULTIMEDIA & RECURSOS</span>
+      </div>
+      <h2 class="noticias-main-title">
+        Noticias, Difusión y <span class="highlight-cyan">Herramientas Quechua</span>
+      </h2>
+      <div class="title-accent-cyan"></div>
+      <p class="noticias-subtitle">
+        Conoce nuestros reconocimientos, cápsulas audiovisuales, encuentros comunitarios y accede al diccionario oficial para reforzar tu práctica lingüística.
+      </p>
+    </div>
+
+    <!-- Cuadrícula de 4 Tarjetas de Noticias y Recursos -->
+    <div class="noticias-grid">
+      @for (item of newsItems; track item.id) {
+        <article class="noticia-card" [class]="'tag-' + item.tagColor">
+          <div class="card-top-row">
+            <span class="badge-tag" [class]="item.tagColor">
+              {{ item.badge }}
+            </span>
+            <div class="card-icon-indicator" [class]="item.tagColor">
+              @if (item.icon === 'award') {
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              } @else if (item.icon === 'play-circle') {
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+              } @else if (item.icon === 'share-2') {
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="18" cy="5" r="3"></circle>
+                  <circle cx="6" cy="12" r="3"></circle>
+                  <circle cx="18" cy="19" r="3"></circle>
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                </svg>
+              } @else {
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+              }
+            </div>
+          </div>
+
+          <h3 class="noticia-title">{{ item.title }}</h3>
+          <p class="noticia-description">{{ item.description }}</p>
+
+          <div class="card-footer-action">
+            <a 
+              [href]="item.link" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="noticia-link-btn"
+              [class]="'btn-' + item.tagColor">
+              <span>{{ item.btnText }}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

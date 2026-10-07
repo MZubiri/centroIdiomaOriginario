@@ -1,0 +1,201 @@
+<div class="edlo-app-shell">
+  <!-- 1. Cabecera Oficial con Navegación Multi-Página -->
+  <app-header 
+    (openEnrollment)="openEnrollment()" 
+    (openSearch)="openSearch()">
+  </app-header>
+
+  <!-- 2. Router Outlet para cargar las Páginas Dedicadas (/inicio, /edlo, /cursos, /lenguas, etc.) -->
+  <main id="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- 3. Pie de Página Oficial en Verde Bosque Oscuro con Logotipo Blanco -->
+  <app-footer></app-footer>
+
+  <!-- ========================================================
+       MODAL GLOBAL: FORMULARIO LIMPIO DE INSCRIPCIÓN (WHATSAPP DIRECTO)
+       ======================================================== -->
+  @if (isEnrollmentModalOpen()) {
+    <div class="modal-overlay" (click)="closeEnrollment()">
+      <div class="modal-card enrollment-modal-card" (click)="$event.stopPropagation()">
+        <button type="button" class="modal-close-btn" (click)="closeEnrollment()" aria-label="Cerrar formulario">
+          &times;
+        </button>
+
+        <div class="enroll-modal-header">
+          <span class="enroll-badge">Admisión 2025 - 2026</span>
+          <h3 class="enroll-title">Inscripción y Reserva de Vacante</h3>
+          <p class="enroll-desc">Completa tus datos y envíalos de inmediato a nuestro WhatsApp oficial para atención prioritaria.</p>
+        </div>
+
+        @if (enrollmentSuccess()) {
+          <div class="success-banner">
+            <div class="success-icon">✓</div>
+            <h4>¡Redirigiendo a WhatsApp!</h4>
+            <p>Se ha generado el mensaje con tus datos para el curso de <strong>{{ enrollForm.language }} ({{ enrollForm.level }})</strong>. Si la ventana de WhatsApp no se abrió automáticamente, presiona el botón a continuación:</p>
+            <div style="margin-top: 1.25rem;">
+              <button type="button" class="btn btn-whatsapp" (click)="submitEnrollment()">
+                <span>Abrir WhatsApp Ahora</span>
+              </button>
+            </div>
+          </div>
+        } @else {
+          <form class="enroll-form" (ngSubmit)="submitEnrollment()">
+            <div class="form-group">
+              <label for="fullName">Nombre y Apellidos completos *</label>
+              <input 
+                type="text" 
+                id="fullName" 
+                name="fullName" 
+                [(ngModel)]="enrollForm.fullName" 
+                placeholder="Ej. Luz Micaela Sandoval Gómez" 
+                required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Celular / WhatsApp *</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  [(ngModel)]="enrollForm.phone" 
+                  placeholder="Ej. +51 987 654 321" 
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo Electrónico (Opcional)</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  [(ngModel)]="enrollForm.email" 
+                  placeholder="ejemplo@correo.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="language">Lengua Originaria *</label>
+                <select id="language" name="language" [(ngModel)]="enrollForm.language">
+                  <option value="Quechua Sureño">Quechua Sureño (Chanka y Collao)</option>
+                  <option value="Quechua Médico">Quechua Médico (Personal de Salud)</option>
+                  <option value="Aymara">Aymara</option>
+                  <option value="Asháninka">Asháninka</option>
+                  <option value="Shipibo-Konibo">Shipibo-Konibo</option>
+                  <option value="Awajún">Awajún</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="level">Nivel o Módulo *</label>
+                <select id="level" name="level" [(ngModel)]="enrollForm.level">
+                  <option value="Preparación EDLO - MINEDU">Preparación EDLO (MINEDU)</option>
+                  <option value="Básico">Básico (Lectura y Escritura Inicial)</option>
+                  <option value="Intermedio">Intermedio (Fluidez Comunicativa)</option>
+                  <option value="Avanzado">Avanzado (Dominio Integral)</option>
+                  <option value="Quechua Médico">Quechua Médico Especializado</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="modality">Modalidad de Estudio</label>
+              <select id="modality" name="modality" [(ngModel)]="enrollForm.modality">
+                <option value="Mixta (Sincrónica / Asincrónica)">Modalidad Mixta (En vivo + Grabaciones 24/7)</option>
+                <option value="100% Virtual Asincrónica">Virtual Flexible (A tu propio ritmo)</option>
+                <option value="Presencial / Semipresencial">Presencial Comunitaria</option>
+              </select>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-whatsapp enroll-submit-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+                </svg>
+                <span>Enviar Inscripción por WhatsApp</span>
+              </button>
+              <small class="whatsapp-hint">Te conectarás directamente con nuestro coordinador al {{ displayPhone }}</small>
+            </div>
+          </form>
+        }
+      </div>
+    </div>
+  }
+
+  <!-- ========================================================
+       MODAL GLOBAL: BÚSQUEDA RÁPIDA Y NAVEGACIÓN
+       ======================================================== -->
+  @if (isSearchModalOpen()) {
+    <div class="modal-overlay" (click)="closeSearch()">
+      <div class="modal-card search-modal-card" (click)="$event.stopPropagation()">
+        <button type="button" class="modal-close-btn" (click)="closeSearch()" aria-label="Cerrar búsqueda">
+          &times;
+        </button>
+
+        <div class="search-modal-header">
+          <h3>Búsqueda Rápida e Información</h3>
+          <p>Encuentra de inmediato cursos, especialización EDLO o contacto.</p>
+        </div>
+
+        <div class="search-input-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input 
+            type="text" 
+            [(ngModel)]="searchQuery" 
+            placeholder="Escribe 'EDLO', 'Quechua', 'Cursos', 'Aymara'..." 
+            autofocus>
+        </div>
+
+        <div class="search-results-list">
+          <a routerLink="/edlo" (click)="closeSearch()" class="search-quick-item">
+            <div class="item-icon">⭐</div>
+            <div>
+              <strong>Especialización EDLO · MINEDU (Página Completa)</strong>
+              <p>Etapas oral y escrita, competencias, simulador y requisitos para el RND-Bilingües.</p>
+            </div>
+          </a>
+
+          <a routerLink="/cursos" (click)="closeSearch()" class="search-quick-item">
+            <div class="item-icon">🏔️</div>
+            <div>
+              <strong>Cursos de Quechua (Básico, Intermedio, Avanzado, Quechua Médico)</strong>
+              <p>Módulos de 220 horas académicas con docentes nativos certificados y test de nivel.</p>
+            </div>
+          </a>
+
+          <a routerLink="/lenguas" (click)="closeSearch()" class="search-quick-item">
+            <div class="item-icon">🗣️</div>
+            <div>
+              <strong>Explorador de Lenguas Originarias</strong>
+              <p>Quechua Sureño, Aymara, Asháninka, Shipibo-Konibo y Awajún.</p>
+            </div>
+          </a>
+
+          <a routerLink="/contacto" (click)="closeSearch()" class="search-quick-item">
+            <div class="item-icon">💬</div>
+            <div>
+              <strong>Contacto Directo y Matrícula por WhatsApp</strong>
+              <p>Asesoría personalizada con nuestro coordinador académico al {{ displayPhone }}.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- Botón Flotante Directo de WhatsApp -->
+  <a 
+    [href]="'https://wa.me/' + whatsappNumber + '?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20los%20cursos%20del%20CENTRO%20DE%20IDIOMA%20ORIGINARIO.'" 
+    target="_blank" 
+    rel="noopener" 
+    class="floating-whatsapp-btn"
+    aria-label="Contactar por WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+    </svg>
+    <span class="whatsapp-tooltip">¿Consultas? Escríbenos al WhatsApp</span>
+  </a>
+</div>

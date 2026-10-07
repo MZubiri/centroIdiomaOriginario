@@ -1,0 +1,23 @@
+<section id="metodologia" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge terracotta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        {{ t().methodology.badge }}
+      </span>
+      <h2 class="section-title">{{ t().methodology.title }}</h2>
+      <p class="section-description">{{ t().methodology.subtitle }}</p>
+    </div>
+
+    <!-- 6 Pasos Visuales en Cuadrícula Ágil -->
+    <div class="methodology-visual-track">
+      @for (step of t().methodology.steps; track step.num) {
+        <div class="method-visual-step card">
+          <div class="step-badge-circle">{{ step.num }}</div>
+          <h3 class="step-title-text">{{ step.name }}</h3>
+          <span class="step-tag-pill">{{ step.tag }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,46 @@
+<div class="contacto-page">
+  <header class="contacto-hero">
+    <div class="container">
+      <div class="hero-tag-pill">
+        <span class="pill-dot"></span>
+        <span>ATENCIÓN INMEDIATA & ASESORÍA PERSONALIZADA</span>
+      </div>
+      <h1 class="contacto-hero-title">
+        Contacto y <span class="highlight-cyan">Matrícula Directa</span>
+      </h1>
+      <p class="contacto-hero-lead">
+        Comunícate con nuestro equipo docente y administrativo. Respondemos tus consultas de inmediato por WhatsApp oficial o a través de nuestros canales de atención.
+      </p>
+    </div>
+  </header>
+
+  <!-- Canales de WhatsApp Segmentados -->
+  <section class="section channels-section">
+    <div class="container">
+      <div class="section-heading-box">
+        <span class="heading-tag">ATENCIÓN PRIORITARIA POR MOTIVO</span>
+        <h2 class="heading-title">¿Qué deseas consultar hoy?</h2>
+        <p class="heading-desc">Selecciona tu consulta para abrir WhatsApp con un mensaje preconfigurado y recibir atención rápida.</p>
+      </div>
+
+      <div class="channels-grid">
+        @for (ch of contactChannels; track ch.title) {
+          <div class="channel-card">
+            <span class="channel-badge">{{ ch.badge }}</span>
+            <h3 class="channel-title">{{ ch.title }}</h3>
+            <p class="channel-desc">{{ ch.desc }}</p>
+            <a [href]="getWhatsAppUrl(ch.msg)" target="_blank" rel="noopener" class="btn btn-whatsapp-channel">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+              <span>Escribir por WhatsApp</span>
+            </a>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Componente de Contacto Oficial -->
+  <section class="section">
+    <app-contacto></app-contacto>
+  </section>
+</div>

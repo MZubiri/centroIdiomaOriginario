@@ -1,0 +1,169 @@
+.nosotros-page {
+  background-color: #f8fafc;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+.nosotros-hero {
+  background: linear-gradient(135deg, #0e3d26 0%, #082417 100%);
+  color: #ffffff;
+  padding: 4.5rem 0 3.5rem;
+  text-align: center;
+}
+
+.hero-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #86efac;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+
+  .pill-dot {
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+  }
+}
+
+.nosotros-hero-title {
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 1rem;
+
+  .highlight-cyan {
+    color: #a7f3d0;
+  }
+}
+
+.nosotros-hero-lead {
+  font-size: 1.15rem;
+  max-width: 760px;
+  margin: 0 auto;
+  color: #d1fae5;
+  line-height: 1.6;
+
+  strong {
+    color: #ffffff;
+  }
+}
+
+.mv-section {
+  padding: 2rem 0 5rem;
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mv-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+
+  .mv-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .mv-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f2d22;
+    margin-bottom: 0.75rem;
+  }
+
+  .mv-desc {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.65;
+    margin: 0;
+  }
+}
+
+.team-banner {
+  background: linear-gradient(135deg, #0f2d22 0%, #164e33 100%);
+  border-radius: 24px;
+  padding: 3rem;
+  color: #ffffff;
+
+  .team-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .team-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #fcd34d;
+      letter-spacing: 0.1em;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-sub {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+  }
+
+  .team-features-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 550px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .team-pill-item {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+
+    .check-mark {
+      color: #4ade80;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    span:last-child {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.4;
+    }
+  }
+}

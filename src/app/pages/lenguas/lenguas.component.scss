@@ -1,0 +1,231 @@
+.lenguas-page {
+  background-color: #f8fafc;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+.lenguas-hero {
+  background: linear-gradient(135deg, #062b1a 0%, #0d4a2f 100%);
+  color: #ffffff;
+  padding: 4.5rem 0 3.5rem;
+  text-align: center;
+}
+
+.hero-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #86efac;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+
+  .pill-dot {
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+  }
+}
+
+.lenguas-hero-title {
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 1rem;
+
+  .highlight-cyan {
+    color: #a7f3d0;
+  }
+}
+
+.lenguas-hero-lead {
+  font-size: 1.15rem;
+  max-width: 760px;
+  margin: 0 auto;
+  color: #d1fae5;
+  line-height: 1.6;
+}
+
+.lang-details-section {
+  padding: 4rem 0 6rem;
+}
+
+.section-heading-box {
+  text-align: center;
+  margin-bottom: 3.5rem;
+
+  .heading-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #059669;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  .heading-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0f2d22;
+    margin-bottom: 0.5rem;
+  }
+
+  .heading-desc {
+    font-size: 1rem;
+    color: #64748b;
+  }
+}
+
+.lang-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.lang-detail-card {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  }
+
+  @media (max-width: 820px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-img-side {
+  position: relative;
+  height: 100%;
+  min-height: 260px;
+
+  .detail-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-family-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: rgba(15, 45, 34, 0.9);
+    color: #4ade80;
+    padding: 0.35rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+}
+
+.card-info-side {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+
+  .info-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .lang-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0f2d22;
+      margin: 0;
+    }
+
+    .speakers-badge {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #059669;
+      background: #ecfdf5;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+    }
+  }
+
+  .region-row {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+
+    strong {
+      color: #334155;
+    }
+  }
+
+  .lang-body-desc {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .normative-box {
+    display: flex;
+    gap: 0.75rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+
+    .normative-icon {
+      font-size: 1.25rem;
+    }
+
+    strong {
+      display: block;
+      font-size: 0.85rem;
+      color: #0f2d22;
+      margin-bottom: 0.15rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+  }
+
+  .card-action-bar {
+    margin-top: auto;
+  }
+
+  .btn-lang-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #0e3d26;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.75rem 1.4rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #145a39;
+    }
+  }
+}

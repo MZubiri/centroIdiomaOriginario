@@ -1,0 +1,99 @@
+<!-- Hero Principal -->
+<app-hero></app-hero>
+
+<!-- Banner Destacado EDLO (Lleva a la página completa /edlo) -->
+<section class="edlo-spotlight-section">
+  <div class="container">
+    <div class="edlo-spotlight-card">
+      <div class="spotlight-left">
+        <div class="spotlight-badge">
+          <span class="spotlight-dot"></span>
+          <span>PROGRAMA OFICIAL DE ACREDITACIÓN DOCENTE</span>
+        </div>
+        <h2 class="spotlight-title">
+          Especialización y Preparación <span class="highlight-gold">EDLO · MINEDU</span>
+        </h2>
+        <p class="spotlight-lead">
+          Ingresa al <strong>Registro Nacional de Docentes Bilingües (RND-Bilingües)</strong>, renueva tu vigencia o eleva tu nivel a Intermedio y Avanzado en Quechua Sureño.
+        </p>
+        <div class="spotlight-features">
+          <div class="spotlight-feat-item">
+            <span class="feat-icon">🎙️</span>
+            <div>
+              <strong>Etapa 1: Oral</strong>
+              <p>Simulacros de entrevista individual con evaluador bilingüe.</p>
+            </div>
+          </div>
+          <div class="spotlight-feat-item">
+            <span class="feat-icon">✍️</span>
+            <div>
+              <strong>Etapa 2: Escrita</strong>
+              <p>Alfabeto oficial normalizado y tipología textual MINEDU.</p>
+            </div>
+          </div>
+        </div>
+        <div class="spotlight-actions">
+          <a routerLink="/edlo" class="btn btn-gold-spotlight">
+            <span>Ver Toda la Información de EDLO</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a [href]="whatsappUrl" target="_blank" rel="noopener" class="btn btn-outline-light-spotlight">
+            <span>Consultar Convocatoria</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="spotlight-right">
+        <div class="edlo-quote-box">
+          <span class="quote-mark">“</span>
+          <p class="quechua-quote">Allin yachaywan, allin kawsay.</p>
+          <span class="quote-sub">Con un buen aprendizaje, una buena vida.</span>
+        </div>
+        <div class="spotlight-stat-box">
+          <div class="stat-circle">220h</div>
+          <div class="stat-info">
+            <strong>Horas Académicas Válidas</strong>
+            <p>Certificación válida para escalafón y legajo pedagógico.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Resumen de Cursos y Programas -->
+<app-programs></app-programs>
+
+<!-- Nuestras Lenguas Originarias -->
+<app-lenguas-explorer></app-lenguas-explorer>
+
+<!-- Métricas de Impacto y Lema Cultural -->
+<app-notice-banner></app-notice-banner>
+
+<!-- Noticias, Blog y Recursos -->
+<app-noticias></app-noticias>
+
+<!-- Llamado Final a la Acción -->
+<section class="home-final-cta">
+  <div class="container">
+    <div class="cta-inner-card">
+      <div class="cta-content">
+        <span class="cta-tag">CENTRO DE IDIOMA ORIGINARIO</span>
+        <h2 class="cta-title">¿Listo para transformar tu práctica pedagógica y lingüística?</h2>
+        <p class="cta-desc">
+          Únete a cientos de docentes en todo el país que han fortalecido su dominio en lenguas originarias con nosotros.
+        </p>
+      </div>
+      <div class="cta-btns">
+        <a routerLink="/contacto" class="btn btn-cta-primary">
+          <span>Inscribirme Ahora</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a [href]="whatsappUrl" target="_blank" rel="noopener" class="btn btn-cta-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+          <span>Escribir al WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

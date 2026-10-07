@@ -1,0 +1,154 @@
+.noticias-page {
+  background-color: #f8fafc;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+.noticias-hero {
+  background: linear-gradient(135deg, #0e3d26 0%, #0369a1 100%);
+  color: #ffffff;
+  padding: 4.5rem 0 3.5rem;
+  text-align: center;
+}
+
+.hero-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #a5f3fc;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+
+  .pill-dot {
+    width: 8px;
+    height: 8px;
+    background: #38bdf8;
+    border-radius: 50%;
+  }
+}
+
+.noticias-hero-title {
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 1rem;
+
+  .highlight-cyan {
+    color: #bae6fd;
+  }
+}
+
+.noticias-hero-lead {
+  font-size: 1.15rem;
+  max-width: 760px;
+  margin: 0 auto;
+  color: #e0f2fe;
+  line-height: 1.6;
+}
+
+.resources-section {
+  padding: 4rem 0 6rem;
+}
+
+.section-heading-box {
+  text-align: center;
+  margin-bottom: 3.5rem;
+
+  .heading-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #0284c7;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  .heading-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #0f2d22;
+    margin-bottom: 0.5rem;
+  }
+
+  .heading-desc {
+    font-size: 1rem;
+    color: #64748b;
+  }
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 980px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.resource-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.25rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  .res-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .res-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #0369a1;
+    background: #e0f2fe;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    margin-bottom: 0.5rem;
+  }
+
+  .res-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f2d22;
+    margin-bottom: 0.5rem;
+  }
+
+  .res-desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
+
+  .res-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 700;
+    color: #0284c7;
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

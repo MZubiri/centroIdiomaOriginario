@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cGradW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    <linearGradient id="leafGradW" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="70%" stop-color="#86efac"/>
+      <stop offset="100%" stop-color="#bbf7d0"/>
+    </linearGradient>
+    <linearGradient id="dotGradW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#86efac"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Logo Icon 'C' with leaf & 'i' dot -->
+  <g transform="translate(10, 8)">
+    <!-- 3D C Ring -->
+    <path d="M 68 8 C 30 8, 8 30, 8 68 C 8 106, 30 128, 68 128 C 82 128, 94 123, 102 114 L 88 98 C 82 104, 76 107, 68 107 C 42 107, 29 88, 29 68 C 29 48, 42 29, 68 29 C 76 29, 82 32, 88 38 L 102 22 C 94 13, 82 8, 68 8 Z" 
+          transform="scale(0.74)" 
+          fill="url(#cGradW)"/>
+
+    <!-- 'i' Dot Sphere -->
+    <circle cx="51" cy="38" r="9" fill="url(#dotGradW)"/>
+
+    <!-- 'i' Lower Stem -->
+    <path d="M 45 52 C 45 50, 57 50, 57 52 L 57 74 C 57 77, 45 77, 45 74 Z" fill="#22c55e" rx="4"/>
+
+    <!-- Stylized Leaf -->
+    <path d="M 58 64 C 58 48, 76 40, 94 38 C 96 56, 88 74, 72 74 C 64 74, 58 70, 58 64 Z" fill="url(#leafGradW)"/>
+  </g>
+
+  <!-- Vertical Divider Line -->
+  <line x1="124" y1="18" x2="124" y2="102" stroke="#4ade80" stroke-width="2" opacity="0.6" stroke-linecap="round" />
+
+  <!-- Typography (White & Light Green) -->
+  <text x="142" y="38" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="18" fill="#e2e8f0" letter-spacing="3">CENTRO DE</text>
+  <text x="142" y="68" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="34" fill="#ffffff" letter-spacing="2">IDIOMA</text>
+  <text x="142" y="94" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="20" fill="#4ade80" letter-spacing="4.5">ORIGINARIO</text>
+
+  <!-- Bottom Slogan -->
+  <line x1="142" y1="104" x2="175" y2="104" stroke="#4ade80" stroke-width="1.5" opacity="0.6"/>
+  <text x="182" y="107" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="9.5" fill="#94a3b8" letter-spacing="1.5">IDIOMA • HISTORIA • TRADICIÓN • IDENTIDAD</text>
+  <line x1="432" y1="104" x2="465" y2="104" stroke="#4ade80" stroke-width="1.5" opacity="0.6"/>
+</svg>

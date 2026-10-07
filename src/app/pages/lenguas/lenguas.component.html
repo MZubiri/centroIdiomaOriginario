@@ -1,0 +1,73 @@
+<div class="lenguas-page">
+  <header class="lenguas-hero">
+    <div class="container">
+      <div class="hero-tag-pill">
+        <span class="pill-dot"></span>
+        <span>PATRIMONIO VIVO DE LA HUMANIDAD</span>
+      </div>
+      <h1 class="lenguas-hero-title">
+        Nuestras <span class="highlight-cyan">Lenguas Originarias</span>
+      </h1>
+      <p class="lenguas-hero-lead">
+        El Perú alberga 48 lenguas indígenas u originarias (4 andinas y 44 amazónicas). Conoce su riqueza, historia, alfabeto oficial y presencia en la educación intercultural bilingüe.
+      </p>
+    </div>
+  </header>
+
+  <!-- Módulo Interactivo de Exploración -->
+  <section class="section">
+    <div class="container">
+      <app-lenguas-explorer></app-lenguas-explorer>
+    </div>
+  </section>
+
+  <!-- Fichas Profundas de las 5 Lenguas Principales -->
+  <section class="section lang-details-section">
+    <div class="container">
+      <div class="section-heading-box">
+        <span class="heading-tag">DIVERSIDAD LINGÜÍSTICA DEL PERÚ</span>
+        <h2 class="heading-title">Catálogo Sociolingüístico y Normativo</h2>
+        <p class="heading-desc">Información oficial sobre familias lingüísticas, alfabetos aprobados por el MINEDU y ámbitos territoriales.</p>
+      </div>
+
+      <div class="lang-cards-stack">
+        @for (lang of languagesDetail; track lang.name) {
+          <article class="lang-detail-card">
+            <div class="card-img-side">
+              <img [src]="lang.image" [alt]="lang.name" class="detail-photo">
+              <div class="card-family-badge">{{ lang.family }}</div>
+            </div>
+            <div class="card-info-side">
+              <div class="info-top-row">
+                <h3 class="lang-title">{{ lang.name }}</h3>
+                <span class="speakers-badge">👥 {{ lang.speakers }}</span>
+              </div>
+
+              <div class="region-row">
+                <strong>📍 Ámbitos y regiones:</strong>
+                <span>{{ lang.regions }}</span>
+              </div>
+
+              <p class="lang-body-desc">{{ lang.description }}</p>
+
+              <div class="normative-box">
+                <span class="normative-icon">📜</span>
+                <div>
+                  <strong>Normalización Oficial:</strong>
+                  <p>{{ lang.writingSystem }}</p>
+                </div>
+              </div>
+
+              <div class="card-action-bar">
+                <a [href]="getLangWhatsAppUrl(lang.name)" target="_blank" rel="noopener" class="btn btn-lang-whatsapp">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+                  <span>Consultar Cursos de {{ lang.name }}</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</div>

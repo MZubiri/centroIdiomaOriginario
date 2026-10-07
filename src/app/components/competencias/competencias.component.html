@@ -1,0 +1,138 @@
+<section id="desarrollamos" class="section section-alt">
+  <div class="container">
+    <!-- Encabezado de Sección -->
+    <div class="section-header">
+      <span class="section-badge terracotta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+        Plan de Estudios Especializado
+      </span>
+      <h2 class="section-title">¿QUÉ DESARROLLAMOS?</h2>
+      <p class="section-description">
+        Fortalecemos de manera integral las 6 competencias comunicativas y lingüísticas clave exigidas en los instrumentos de evaluación del Ministerio de Educación.
+      </p>
+    </div>
+
+    <!-- Filtro de Categorías -->
+    <div class="filter-pills-row">
+      <button 
+        type="button" 
+        class="filter-pill" 
+        [class.active]="activeFilter() === 'Todos'" 
+        (click)="setFilter('Todos')">
+        Todas las Competencias (6)
+      </button>
+      <button 
+        type="button" 
+        class="filter-pill" 
+        [class.active]="activeFilter() === 'Oral'" 
+        (click)="setFilter('Oral')">
+        Fase Oral
+      </button>
+      <button 
+        type="button" 
+        class="filter-pill" 
+        [class.active]="activeFilter() === 'Escrito'" 
+        (click)="setFilter('Escrito')">
+        Fase Escrita
+      </button>
+      <button 
+        type="button" 
+        class="filter-pill" 
+        [class.active]="activeFilter() === 'Integral'" 
+        (click)="setFilter('Integral')">
+        Estructura & Preparación
+      </button>
+    </div>
+
+    <!-- Grid de Competencias -->
+    <div class="competencias-grid">
+      @for (item of filteredCompetencias; track item.id) {
+        <div class="competencia-card card">
+          <div class="card-header-row">
+            <div class="number-tag">{{ item.number }}</div>
+            <span class="badge" [ngClass]="{
+              'badge-blue': item.focusArea === 'Oral',
+              'badge-terracotta': item.focusArea === 'Escrito',
+              'badge-emerald': item.focusArea === 'Integral'
+            }">
+              {{ item.focusArea }}
+            </span>
+          </div>
+
+          <h3 class="competencia-title">{{ item.title }}</h3>
+          <p class="competencia-short-desc">{{ item.shortDesc }}</p>
+
+          <div class="topics-container">
+            <h4 class="topics-title">Contenidos clave:</h4>
+            <ul class="topics-list">
+              @for (topic of item.topics.slice(0, 3); track topic) {
+                <li class="topic-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c2410c" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>{{ topic }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <div class="card-footer-action">
+            <button type="button" class="btn-text-link" (click)="openModal(item)">
+              <span>Ver temario y criterios</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Modal de Detalle de Competencia (Sólido, Accesible, Sin Glass) -->
+@if (selectedCompetencia(); as comp) {
+  <div class="modal-backdrop" (click)="closeModal()">
+    <div class="modal-window" (click)="$event.stopPropagation()" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-num-badge">Módulo {{ comp.number }}</span>
+          <h3 class="modal-title">{{ comp.title }}</h3>
+        </div>
+        <button type="button" class="btn-close-modal" (click)="closeModal()" aria-label="Cerrar modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4 class="modal-section-heading">Fundamentación y Enfoque</h4>
+          <p class="modal-text">{{ comp.fullDesc }}</p>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-section-heading">Desglose de Temas de Estudio</h4>
+          <ul class="modal-topics-list">
+            @for (topic of comp.topics; track topic) {
+              <li class="modal-topic-item">
+                <div class="topic-bullet"></div>
+                <span>{{ topic }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <div class="modal-criteria-box">
+          <div class="criteria-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <div>
+            <h5 class="criteria-title">Criterio en la Rúbrica EDLO / MINEDU</h5>
+            <p class="criteria-desc">{{ comp.evaluationCriteria }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+        <a href="#inscripcion" (click)="closeModal()" class="btn btn-primary">Inscribirme a este Módulo</a>
+      </div>
+    </div>
+  </div>
+}

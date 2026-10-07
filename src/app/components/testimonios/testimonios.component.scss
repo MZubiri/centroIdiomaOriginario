@@ -1,0 +1,106 @@
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  @media (max-width: 850px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonio-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-top-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.testimonio-year {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.quote-text {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.achieved-level-box {
+  background-color: var(--primary-50);
+  border: 1px solid var(--primary-100);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  margin-top: auto;
+}
+
+.level-label {
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: var(--primary-700);
+  text-transform: uppercase;
+}
+
+.level-val {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-900);
+}
+
+.teacher-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.teacher-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.teacher-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-950);
+  margin-bottom: 0.15rem;
+}
+
+.teacher-role {
+  font-size: 0.825rem;
+  color: var(--accent-terracotta);
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+}
+
+.teacher-loc {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
