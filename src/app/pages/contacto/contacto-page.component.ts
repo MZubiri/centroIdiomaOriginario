@@ -34,10 +34,10 @@ export class ContactoPageComponent {
       msg: 'Hola, deseo información sobre el programa de Quechua Médico para el sector salud.'
     },
     {
-      title: 'Validación de Certificados y Legalizaciones',
+      title: 'Consultas Académicas y Matrícula',
       badge: 'ATENCIÓN ADMINISTRATIVA',
-      desc: 'Emisión de constancias, verificación con código institucional y duplicados de certificados.',
-      msg: 'Hola, deseo verificar un código de certificado oficial o consultar por mi trámite.'
+      desc: 'Información sobre inicios de clases, formas de pago, convenios institucionales y constancias de estudio.',
+      msg: 'Hola, deseo comunicarme con administración para realizar consultas sobre matrícula y trámites académicos.'
     }
   ];
 

@@ -21,7 +21,6 @@ export interface ServiceItem {
 export class ProgramsComponent {
   private router = inject(Router);
 
-  openCertificate = output<void>();
   openEdloInfo = output<void>();
   openEnrollment = output<void>();
   openLevelTest = output<void>();

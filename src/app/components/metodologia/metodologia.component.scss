@@ -13,56 +13,56 @@
 }
 
 .method-visual-step {
-  background-color: #FFFFFF;
-  border: 2px solid var(--border-subtle);
-  border-radius: var(--radius-xl);
-  padding: 1.75rem 1rem;
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.85rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 
   &:hover {
     transform: translateY(-5px);
-    border-color: var(--saphi-purple);
-    box-shadow: var(--shadow-md);
+    border-color: #059669;
+    box-shadow: 0 12px 25px rgba(5, 150, 105, 0.12);
   }
 
-  &:nth-child(1) .step-badge-circle { background-color: var(--saphi-teal); }
-  &:nth-child(2) .step-badge-circle { background-color: var(--saphi-blue); }
-  &:nth-child(3) .step-badge-circle { background-color: var(--saphi-purple); }
-  &:nth-child(4) .step-badge-circle { background-color: var(--saphi-red); }
-  &:nth-child(5) .step-badge-circle { background-color: #D97706; }
-  &:nth-child(6) .step-badge-circle { background-color: #059669; }
+  &:nth-child(1) .step-badge-circle { background-color: #0284c7; } /* Explicación - Azul celeste */
+  &:nth-child(2) .step-badge-circle { background-color: #0d9488; } /* Práctica Oral - Teal */
+  &:nth-child(3) .step-badge-circle { background-color: #7c3aed; } /* Lectura - Púrpura */
+  &:nth-child(4) .step-badge-circle { background-color: #dc2626; } /* Escritura - Rojo */
+  &:nth-child(5) .step-badge-circle { background-color: #d97706; } /* Ejercicios - Ámbar */
+  &:nth-child(6) .step-badge-circle { background-color: #0e3d26; } /* Simulacros - Verde Bosque */
 }
 
 .step-badge-circle {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  color: #FFFFFF;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.25rem;
+  color: #ffffff !important;
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 1.35rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.15rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 .step-title-text {
   font-size: 1.15rem;
   font-weight: 800;
-  font-family: var(--font-heading);
-  color: var(--saphi-purple);
+  color: #0f2d22;
   margin-bottom: 0.4rem;
 }
 
 .step-tag-pill {
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-size: 0.85rem;
+  color: #334155;
   font-weight: 600;
   line-height: 1.35;
 }

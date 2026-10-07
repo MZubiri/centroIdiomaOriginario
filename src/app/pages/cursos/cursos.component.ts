@@ -3,18 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-export interface VerifiedCertificate {
-  code: string;
-  recipient: string;
-  module: string;
-  program: string;
-  hours: number;
-  grade: string;
-  modality: string;
-  dateRange: string;
-  issueDate: string;
-  location: string;
-}
 
 export interface TestQuestion {
   title: string;
@@ -112,40 +100,7 @@ export class CursosComponent {
     return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(msg)}`;
   }
 
-  // Verificador de Certificados Oficiales
-  searchCertCode = signal('CIO-APU-2026-0814');
-  activeCertificate: VerifiedCertificate | null = {
-    code: 'CIO-APU-2026-0814',
-    recipient: 'LUZ MICAELA SANDOVAL GOMEZ',
-    module: 'Quechua Básico (Lectura y Escritura)',
-    program: 'Lectura y escritura de la lengua Quechua',
-    hours: 220,
-    grade: '18 (Dieciocho) - Sobresaliente',
-    modality: 'Mixta (sincrónica / asincrónica)',
-    dateRange: 'del 11 de abril al 18 de Julio de 2026',
-    issueDate: '5 de agosto del 2026',
-    location: 'Chincheros, Apurímac'
-  };
 
-  searchCertificate() {
-    const code = this.searchCertCode().trim().toUpperCase();
-    if (code.includes('CIO') || code.length > 5) {
-      this.activeCertificate = {
-        code: code,
-        recipient: 'LUZ MICAELA SANDOVAL GOMEZ',
-        module: 'Quechua Básico (Lectura y Escritura)',
-        program: 'Lectura y escritura de la lengua Quechua',
-        hours: 220,
-        grade: '18 (Dieciocho) - Sobresaliente',
-        modality: 'Mixta (sincrónica / asincrónica)',
-        dateRange: 'del 11 de abril al 18 de Julio de 2026',
-        issueDate: '5 de agosto del 2026',
-        location: 'Chincheros, Apurímac'
-      };
-    } else {
-      this.activeCertificate = null;
-    }
-  }
 
   getCourseWhatsAppUrl(courseName: string): string {
     const msg = `¡Hola! Solicito información de costos, horarios y matrícula para el curso: *${courseName}*.`;

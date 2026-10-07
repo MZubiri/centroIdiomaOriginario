@@ -5,19 +5,6 @@ import { RouterOutlet, RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-export interface VerifiedCertificate {
-  code: string;
-  recipient: string;
-  module: string;
-  program: string;
-  hours: number;
-  grade: string;
-  modality: string;
-  dateRange: string;
-  issueDate: string;
-  location: string;
-}
-
 @Component({
   selector: 'app-root',
   standalone: true,
