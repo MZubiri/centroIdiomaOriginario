@@ -15,7 +15,7 @@ export class LenguasComponent {
 
   languagesDetail = [
     {
-      name: 'Quechua Sureño (Qhichwa)',
+      name: 'Quechua Sureño',
       family: 'Familia Quechua',
       speakers: '+3,700,000 hablantes',
       regions: 'Cusco, Ayacucho, Puno, Apurímac, Huancavelica, Arequipa, Moquegua',
