@@ -12,6 +12,10 @@
   position: relative;
   overflow: hidden;
 
+  @media (max-width: 768px) {
+    padding: 3rem 0 2.25rem;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -47,6 +51,12 @@
   color: #86efac;
   margin-bottom: 1.5rem;
 
+  @media (max-width: 480px) {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.85rem;
+    margin-bottom: 1.15rem;
+  }
+
   .badge-dot {
     width: 8px;
     height: 8px;
@@ -72,7 +82,17 @@
   }
 
   @media (max-width: 768px) {
-    font-size: 2.15rem;
+    font-size: 2.25rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 1.55rem;
   }
 }
 
@@ -89,6 +109,12 @@
 
   @media (max-width: 768px) {
     font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
   }
 }
 
@@ -104,11 +130,26 @@
   margin-bottom: 2.5rem;
   text-align: left;
 
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.15rem;
+    gap: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1.75rem;
+  }
+
   .quote-symbol {
     font-size: 2.5rem;
     color: #f59e0b;
     line-height: 1;
     font-family: serif;
+
+    @media (max-width: 600px) {
+      font-size: 1.85rem;
+    }
   }
 
   .phrase-quechua {
@@ -116,6 +157,10 @@
     font-size: 1.15rem;
     color: #ffffff;
     font-style: italic;
+
+    @media (max-width: 600px) {
+      font-size: 1.05rem;
+    }
   }
 
   .phrase-sub {
@@ -133,6 +178,13 @@
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 420px) {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 }
 
@@ -143,12 +195,20 @@
   padding: 1.25rem 1rem;
   backdrop-filter: blur(8px);
 
+  @media (max-width: 600px) {
+    padding: 1rem 0.85rem;
+  }
+
   .stat-number {
     display: block;
     font-size: 1.85rem;
     font-weight: 800;
     color: #fde68a;
     margin-bottom: 0.25rem;
+
+    @media (max-width: 600px) {
+      font-size: 1.55rem;
+    }
   }
 
   .stat-label {
@@ -163,6 +223,20 @@
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+
+    .btn-enroll-hero,
+    .btn-outline-hero {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      white-space: normal;
+    }
+  }
 }
 
 .btn-enroll-hero {
@@ -208,6 +282,14 @@
 .edlo-overview-section {
   padding: 5rem 0;
   background: #ffffff;
+
+  @media (max-width: 768px) {
+    padding: 3.5rem 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2.75rem 0;
+  }
 }
 
 .edlo-explain-box {
@@ -219,6 +301,10 @@
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  @media (max-width: 600px) {
+    gap: 1.75rem;
   }
 }
 
@@ -235,6 +321,15 @@
   font-weight: 800;
   color: #0f2d22;
   margin-bottom: 1.25rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 1.5rem;
+  }
 }
 
 .explain-body {
@@ -245,6 +340,11 @@
 
   strong {
     color: #0f2d22;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.98rem;
+    line-height: 1.6;
   }
 }
 
@@ -257,6 +357,11 @@
   border-radius: 12px;
   color: #064e3b;
 
+  @media (max-width: 600px) {
+    padding: 1rem 0.9rem;
+    gap: 0.75rem;
+  }
+
   svg {
     flex-shrink: 0;
     color: #059669;
@@ -267,6 +372,10 @@
     margin: 0;
     font-size: 0.95rem;
     line-height: 1.55;
+
+    @media (max-width: 600px) {
+      font-size: 0.88rem;
+    }
   }
 }
 
@@ -283,6 +392,11 @@
   padding: 1.75rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  @media (max-width: 600px) {
+    padding: 1.25rem 1.15rem;
+    border-radius: 16px;
+  }
 
   &:hover {
     transform: translateY(-3px);
@@ -376,12 +490,24 @@
 .edlo-learn-section {
   padding: 5rem 0;
   background: #f8fafc;
+
+  @media (max-width: 768px) {
+    padding: 3.5rem 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2.75rem 0;
+  }
 }
 
 .section-center-head {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 3.5rem;
+
+  @media (max-width: 600px) {
+    margin-bottom: 2.25rem;
+  }
 
   .section-pill {
     display: inline-block;
@@ -397,12 +523,24 @@
     font-weight: 800;
     color: #0f2d22;
     margin-bottom: 0.75rem;
+
+    @media (max-width: 600px) {
+      font-size: 1.75rem;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 1.45rem;
+    }
   }
 
   .section-sub {
     font-size: 1.05rem;
     color: #334155;
     margin: 0;
+
+    @media (max-width: 600px) {
+      font-size: 0.95rem;
+    }
   }
 }
 
@@ -418,6 +556,8 @@
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
+    gap: 1.15rem;
+    margin-bottom: 2.25rem;
   }
 }
 
@@ -431,6 +571,11 @@
   flex-direction: column;
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  @media (max-width: 600px) {
+    padding: 1.5rem 1.15rem;
+    border-radius: 16px;
+  }
 
   &:hover {
     transform: translateY(-4px);
@@ -456,6 +601,10 @@
     font-weight: 700;
     color: #0f2d22;
     margin-bottom: 0.75rem;
+
+    @media (max-width: 600px) {
+      font-size: 1.15rem;
+    }
   }
 
   .mod-desc {
@@ -464,6 +613,10 @@
     line-height: 1.6;
     margin-bottom: 1.25rem;
     flex-grow: 1;
+
+    @media (max-width: 600px) {
+      font-size: 0.9rem;
+    }
   }
 
   .mod-highlight-tag {
@@ -484,6 +637,15 @@
   padding: 3rem;
   color: #ffffff;
 
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 1rem;
+    border-radius: 18px;
+  }
+
   .why-pill {
     font-size: 0.75rem;
     font-weight: 800;
@@ -498,6 +660,11 @@
     font-weight: 800;
     color: #ffffff;
     margin-bottom: 2rem;
+
+    @media (max-width: 600px) {
+      font-size: 1.45rem;
+      margin-bottom: 1.5rem;
+    }
   }
 
   .why-reasons-list {
@@ -514,6 +681,10 @@
   .why-reason-item {
     display: flex;
     gap: 1rem;
+
+    @media (max-width: 480px) {
+      gap: 0.75rem;
+    }
 
     .reason-check {
       width: 36px;
@@ -533,6 +704,10 @@
       color: #ffffff;
       font-size: 1.05rem;
       margin-bottom: 0.25rem;
+
+      @media (max-width: 600px) {
+        font-size: 0.98rem;
+      }
     }
 
     p {
@@ -540,6 +715,10 @@
       font-size: 0.9rem;
       color: #cbd5e1;
       line-height: 1.5;
+
+      @media (max-width: 600px) {
+        font-size: 0.85rem;
+      }
     }
   }
 }
@@ -548,6 +727,14 @@
 .edlo-enroll-section {
   padding: 5rem 0;
   background: #ffffff;
+
+  @media (max-width: 768px) {
+    padding: 3.5rem 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2.75rem 0;
+  }
 }
 
 .enroll-box-grid {
@@ -559,6 +746,10 @@
   @media (max-width: 880px) {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  @media (max-width: 600px) {
+    gap: 2rem;
   }
 }
 
@@ -576,6 +767,14 @@
   color: #0f2d22;
   margin-bottom: 1rem;
   line-height: 1.25;
+
+  @media (max-width: 600px) {
+    font-size: 1.75rem;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 1.45rem;
+  }
 }
 
 .enroll-sub {
@@ -583,12 +782,21 @@
   color: #334155;
   margin-bottom: 2rem;
   line-height: 1.6;
+
+  @media (max-width: 600px) {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .enroll-contact-points {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  @media (max-width: 600px) {
+    gap: 1.15rem;
+  }
 
   .point-item {
     display: flex;
@@ -613,6 +821,7 @@
       font-weight: 600;
       text-decoration: none;
       font-size: 0.95rem;
+      word-break: break-word;
     }
 
     p {
@@ -629,11 +838,20 @@
   padding: 2.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
+  @media (max-width: 600px) {
+    padding: 1.5rem 1.15rem;
+    border-radius: 18px;
+  }
+
   .form-card-title {
     font-size: 1.5rem;
     font-weight: 800;
     color: #0f2d22;
     margin-bottom: 0.35rem;
+
+    @media (max-width: 600px) {
+      font-size: 1.35rem;
+    }
   }
 
   .form-card-desc {
@@ -698,6 +916,8 @@
     margin-top: 1rem;
     box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
     transition: all 0.2s ease;
+    white-space: normal;
+    text-align: center;
 
     &:hover {
       background: #047857;
@@ -726,6 +946,13 @@
   color: #475569;
   font-size: 0.85rem;
   line-height: 1.6;
+
+  @media (max-width: 600px) {
+    margin-top: 2.5rem;
+    padding: 1rem 1.15rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
   .legal-icon {
     font-size: 1.25rem;

@@ -87,6 +87,11 @@
   box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
+  @media (max-width: 600px) {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
   &:hover {
     transform: translateY(-6px);
     box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
@@ -192,6 +197,11 @@
   padding: 2.75rem 2.25rem;
   border: 1px solid #e2e8f0;
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+
+  @media (max-width: 600px) {
+    padding: 1.75rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
 }
 
 .custom-box-title {

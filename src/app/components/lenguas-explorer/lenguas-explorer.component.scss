@@ -96,6 +96,11 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
+  @media (max-width: 480px) {
+    height: 280px;
+    padding: 1.25rem 1rem;
+  }
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
