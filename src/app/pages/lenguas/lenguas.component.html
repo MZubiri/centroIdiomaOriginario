@@ -34,7 +34,7 @@
         @for (lang of languagesDetail; track lang.name) {
           <article class="lang-detail-card">
             <div class="card-img-side">
-              <img [src]="lang.image" [alt]="lang.name" class="detail-photo">
+              <img [src]="lang.image" [alt]="lang.name" class="detail-photo" loading="lazy" decoding="async">
               <div class="card-family-badge">{{ lang.family }}</div>
             </div>
             <div class="card-info-side">
