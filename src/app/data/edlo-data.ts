@@ -488,7 +488,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'faq-6',
     category: 'matricula',
     question: '¿Se entrega constancia o certificación al culminar la capacitación?',
-    answer: 'Sí. Al culminar satisfactoriamente el plan formativo y los simulacros, se emite una Certificación Institucional de Especialización en Fortalecimiento de Competencias Comunicativas en Lenguas Originarias por 220 horas pedagógicas, válida para enriquecer tu legajo profesional y escalafón.'
+    answer: 'Sí. Al culminar satisfactoriamente el plan formativo y los simulacros, se emite una Certificación Institucional de Especialización en Fortalecimiento de Competencias Comunicativas en Lenguas Originarias, válida para enriquecer tu legajo profesional.'
   }
 ];
 
