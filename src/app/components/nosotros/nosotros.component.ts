@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class NosotrosComponent {
   openEnrollment = output<void>();
 
-  whatsappNumber = '51934772764';
+  whatsappNumber = '51960939757';
 
   get whatsappNosotrosUrl(): string {
     const text = encodeURIComponent(

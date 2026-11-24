@@ -18,8 +18,8 @@ export interface QuickWhatsappOption {
   styleUrl: './contacto.component.scss'
 })
 export class ContactoComponent {
-  whatsappNumber = '51934772764';
-  displayPhone = '+51 934 772 764';
+  whatsappNumber = '51960939757';
+  displayPhone = '+51 960 939 757';
 
   contactName = '';
   contactTopic = 'Inscripción EDLO Quechua Sureño';

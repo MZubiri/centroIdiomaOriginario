@@ -11,8 +11,8 @@ import { ContactoComponent } from '../../components/contacto/contacto.component'
   styleUrl: './contacto-page.component.scss'
 })
 export class ContactoPageComponent {
-  whatsappNumber = '51934772764';
-  displayPhone = '+51 934 772 764';
+  whatsappNumber = '51960939757';
+  displayPhone = '+51 960 939 757';
 
   contactChannels = [
     {

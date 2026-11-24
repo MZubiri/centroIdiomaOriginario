@@ -97,7 +97,7 @@ export class ProgramsComponent {
     }
   }
 
-  whatsappNumber = '51934772764';
+  whatsappNumber = '51960939757';
 
   get whatsappMedicoUrl(): string {
     const text = encodeURIComponent(

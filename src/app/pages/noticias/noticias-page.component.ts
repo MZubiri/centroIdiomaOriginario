@@ -37,7 +37,7 @@ export class NoticiasPageComponent {
       title: 'Cuentos y Relatos Tradicionales en Audio',
       badge: 'MULTIMEDIA EDUCATIVO',
       desc: 'Audios auténticos narrados por hablantes sabios de comunidades andinas para entrenamiento auditivo.',
-      link: 'https://wa.me/51934772764?text=Hola,%20solicito%20acceso%20a%20los%20audios%20y%20relatos%20en%20Quechua.',
+      link: 'https://wa.me/51960939757?text=Hola,%20solicito%20acceso%20a%20los%20audios%20y%20relatos%20en%20Quechua.',
       icon: '🎧'
     }
   ];

@@ -89,7 +89,7 @@ export class InscripcionComponent {
     const msg = isEn
       ? `Hello, my name is ${data.nombres} ${data.apellidos} (ID: ${data.dni}). I would like to request enrollment and syllabus for ${data.programa} in ${data.lengua} (${data.modalidad}) at CENTRO DE IDIOMA ORIGINARIO.`
       : `Hola, mi nombre es ${data.nombres} ${data.apellidos} (DNI: ${data.dni}). Solicito información y vacante para el ${data.programa} en la lengua ${data.lengua} (${data.modalidad}) en el CENTRO DE IDIOMA ORIGINARIO.`;
-    return `https://wa.me/51934772764?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/51960939757?text=${encodeURIComponent(msg)}`;
   }
 
   closeModal() {

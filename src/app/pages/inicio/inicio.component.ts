@@ -23,7 +23,7 @@ import { NoticiasComponent } from '../../components/noticias/noticias.component'
   styleUrl: './inicio.component.scss'
 })
 export class InicioComponent {
-  whatsappNumber = '51934772764';
+  whatsappNumber = '51960939757';
 
   get whatsappUrl(): string {
     const text = encodeURIComponent(

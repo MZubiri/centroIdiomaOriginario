@@ -25,8 +25,8 @@ import { FaqComponent } from '../../components/faq/faq.component';
   styleUrl: './edlo.component.scss'
 })
 export class EdloComponent {
-  whatsappNumber = '51934772764';
-  displayPhone = '+51 934 772 764';
+  whatsappNumber = '51960939757';
+  displayPhone = '+51 960 939 757';
 
   enrollForm = {
     fullName: '',

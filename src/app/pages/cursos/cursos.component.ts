@@ -22,8 +22,8 @@ export interface TestQuestion {
   styleUrl: './cursos.component.scss'
 })
 export class CursosComponent {
-  whatsappNumber = '51934772764';
-  displayPhone = '+51 934 772 764';
+  whatsappNumber = '51960939757';
+  displayPhone = '+51 960 939 757';
 
   // Test de Nivel Interactivo
   currentTestStep = signal<number>(0);

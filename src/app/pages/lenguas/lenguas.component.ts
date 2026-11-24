@@ -11,7 +11,7 @@ import { LenguasExplorerComponent } from '../../components/lenguas-explorer/leng
   styleUrl: './lenguas.component.scss'
 })
 export class LenguasComponent {
-  whatsappNumber = '51934772764';
+  whatsappNumber = '51960939757';
 
   languagesDetail = [
     {

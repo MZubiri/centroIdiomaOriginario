@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class EdloSectionComponent {
   openEnrollment = output<void>();
 
-  whatsappNumber = '51934772764';
+  whatsappNumber = '51960939757';
 
   get whatsappUrl(): string {
     const text = encodeURIComponent(
