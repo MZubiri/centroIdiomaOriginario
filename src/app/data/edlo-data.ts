@@ -308,24 +308,24 @@ export const PREGUNTAS_SIMULADOR_DATA: PreguntaSimulador[] = [
     language: 'Quechua Chanka',
     levelTarget: 'Intermedio',
     title: 'Situación Oral 1: Diálogo Pedagógico en la Comunidad',
-    situationContext: 'En la entrevista oral de la EDLO, el evaluador te plantea la siguiente situación: "Yachachiq, rimaripuy imaynatam warmakunawan kawsaykuna yachayta wasipi ruranki" (Profesor, explique cómo trabaja los saberes de la comunidad en la escuela con sus estudiantes).',
+    situationContext: 'En la entrevista oral de la EDLO, el evaluador te plantea la siguiente situación: “Yachachiq, rimariykuway imaynatam ayllupa yachayninkunata yachaywasipi warmakunawan llamkanki” (Profesor, explique cómo trabaja los saberes de la comunidad en la escuela con sus estudiantes).',
     prompt: '¿Cuál de las siguientes respuestas demuestra un nivel discursivo Intermedio/Avanzado con conectores adecuados y sufijos evidenciales correctos?',
     options: [
       {
         id: 'A',
-        text: 'Ñoqa warmakunawan yachaykuna rurani. Tayta mamakunawan rimani. Chaymi allin.',
+        text: 'Ñuqa warmakunawan yachaykunata rurani. Tayta mamakunawan rimani. Chaymi allin.',
         isCorrect: false,
         feedback: 'Nivel Básico: Oraciones muy cortas, yuxtapuestas y sin conectores ni sufijos de desarrollo discursivo complejo.'
       },
       {
         id: 'B',
-        text: 'Ñoqam warmakunawan kuska chakra llamk\'ayta qhawarispa yachachini; chaymantapas tayta mamakunatam tapukuni kawsaykunamanta, chaynapi yachayninchik mana chinkananpaq.',
+        text: 'Ñuqam warmakunawan kuska chakra llamkayta qawarispa yachachini; chaymantapas tayta mamakunatam tapukuni kawsaykunamanta, chaynapi yachayninchik mana chinkananpaq.',
         isCorrect: true,
         feedback: '¡Excelente! Nivel Intermedio/Avanzado: Emplea gerundio (-spa), conectores discursivos (chaymantapas, chaynapi) y sufijo de finalidad (-paq) con alta coherencia.'
       },
       {
         id: 'C',
-        text: 'Warmakuna kusi kusi pukllanku yachaywasipi. Mana imapas kanchu.',
+        text: 'Warmakunaqa kusisqa pukllanku yachaywasipi. Manam imapas kanchu.',
         isCorrect: false,
         feedback: 'No responde adecuadamente a la situación pedagógica solicitada por el evaluador.'
       }
@@ -365,32 +365,32 @@ export const PREGUNTAS_SIMULADOR_DATA: PreguntaSimulador[] = [
   {
     id: 3,
     modality: 'oral',
-    language: 'Aymara',
-    levelTarget: 'Intermedio',
+    language: 'Quechua Chanka',
+    levelTarget: 'Avanzado',
     title: 'Situación Oral 3: Justificación de una Sesión de Aprendizaje',
-    situationContext: 'El evaluador te pregunta en lengua Aymara: "¿Kunjamatsa yatiqañ utana aymar aru yatichäw luräta?" (¿Cómo desarrollarás la enseñanza de la lengua aymara en la institución educativa?).',
-    prompt: 'Selecciona la respuesta que evidencia dominio de los sufijos de elisión vocálica y concordancia modal en Aymara:',
+    situationContext: 'El evaluador te pregunta en quechua chanka: “¿Imaraykutaq yarqa aspiymanta yachachiyta akllarqanki?” (¿Por qué elegiste la limpieza de acequias como tema de tu sesión de aprendizaje?).',
+    prompt: 'Selecciona la respuesta que justifica adecuadamente la sesión, usando sufijos de causa (-rayku), de finalidad (-nanpaq) y la concordancia correcta de tiempo:',
     options: [
       {
         id: 'A',
-        text: 'Nayax aymara parlta, jupanakax aymara yatiqapxi. Ukhamakiw.',
+        text: 'Yarqa aspiyqa allinmi. Warmakuna yachanqaku. Chaylla.',
         isCorrect: false,
-        feedback: 'Nivel Básico: Oraciones muy elementales con escaso desarrollo argumentativo.'
+        feedback: 'Respuesta muy básica y telegráfica. No fundamenta causas ni finalidades pedagógicas.'
       },
       {
         id: 'B',
-        text: 'Nayax wawanakampix sarnaqäwinak sarayasa aymar arut aruskipäw lurapxä, ukatx tayka tatampi parlkasaw suma yatxatawinak apsü.',
+        text: 'Yarqa aspiytam akllarqani, ayllupi kay punchawkunapi rurasqankurayku; chaynapim warmakunaqa yakuta waqaychanankupaq yachanqaku, hinallataq runasimipi willakuykunata qillqanqaku.',
         isCorrect: true,
-        feedback: '¡Excelente! Uso correcto de elisiones vocálicas condicionadas, sufijos de gerundio (-sa) y sufijo continuativo (-kasa).'
+        feedback: '¡Excelente! Da la razón con rurasqankurayku (“porque lo realizan”) y la finalidad con waqaychanankupaq (“para que cuiden”). También proyecta los aprendizajes en futuro (yachanqaku, qillqanqaku) y une las ideas con chaynapim e hinallataq.'
       },
       {
         id: 'C',
-        text: 'Aymara arux wali askiwa, jisa, nayaw yatichä.',
+        text: 'Ñuqaqa yarqa aspiypim llamkarqani, ancha sasam karqa.',
         isCorrect: false,
-        feedback: 'Respuesta incompleta que no detalla la metodología pedagógica requerida.'
+        feedback: 'Anécdota personal que no responde ni justifica la sesión de aprendizaje ni el propósito pedagógico solicitado.'
       }
     ],
-    pedagogicalTip: 'En la entrevista de Aymara se valora especialmente la aplicación correcta de la caída o elisión de vocales en frontera de palabra.'
+    pedagogicalTip: 'En la entrevista oral de la EDLO se evalúa el uso de conectores causales (-rayku), de propósito (-nanpaq) y conectores discursivos como chaynapim e hinallataq para argumentar tus decisiones pedagógicas.'
   }
 ];
 
